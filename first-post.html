@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="./theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="./theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/font-awesome.min.css">
+
+
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<meta name="author" content="Rodrigo Hubner" />
+<meta name="description" content="This year I'm applying to Google Summer of Code (GSoC). I wrote a proposal for the MNE-Python organization that stands on the umbrella of Python Software Foundation (PSF). The MNE-python project has a rich amount of tools needed to work with EEG and MEG data. On the other hand, many …" />
+<meta name="keywords" content="MNE-Python, GSoC, PSF">
+<meta property="og:site_name" content="Hack the Brain"/>
+<meta property="og:title" content="Project applied in GSoC"/>
+<meta property="og:description" content="This year I'm applying to Google Summer of Code (GSoC). I wrote a proposal for the MNE-Python organization that stands on the umbrella of Python Software Foundation (PSF). The MNE-python project has a rich amount of tools needed to work with EEG and MEG data. On the other hand, many …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="./first-post.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2017-04-04 19:00:00-03:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="./author/rodrigo-hubner.html">
+<meta property="article:section" content="misc"/>
+<meta property="article:tag" content="MNE-Python"/>
+<meta property="article:tag" content="GSoC"/>
+<meta property="article:tag" content="PSF"/>
+<meta property="og:image" content="https://avatars3.githubusercontent.com/u/5169959?v=3&u=30a93dde01ad3df9e78d652e49fb65e2e91e95ab&s=400">
+
+  <title>Hack the Brain &ndash; Project applied in GSoC</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href=".">
+        <img src="https://avatars3.githubusercontent.com/u/5169959?v=3&u=30a93dde01ad3df9e78d652e49fb65e2e91e95ab&s=400" alt="" title="">
+      </a>
+      <h1><a href="."></a></h1>
+
+<p>BCI | Programm Languages | Robotics</p>
+      <nav>
+        <ul class="list">
+          <li><a href="./pages/about.html#about">About</a></li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-github" href="https://github.com/rodrigohubner" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-google" href="https://plus.google.com/+rodrigohubner1" target="_blank"><i class="fa fa-google"></i></a></li>
+        <li><a class="sc-envelope-o" href="mailto:rhubner@gmail.com" target="_blank"><i class="fa fa-envelope-o"></i></a></li>
+        <li><a class="sc-rss" href="https://rodrigohubner.github.io/feeds/all.atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href=".">    Home
+</a>
+
+      <a href="/pages/about.html">ABOUT</a>
+
+
+    </nav>
+
+<article class="single">
+  <header>
+    <h1 id="first-post">Project applied in GSoC</h1>
+    <p>
+          Posted on ter 04 abril 2017 in <a href="./category/misc.html">misc</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>This year I'm applying to <a href="https://summerofcode.withgoogle.com/">Google Summer of Code (GSoC)</a>. I wrote a proposal for the <a href="https://martinos.org/mne/stable/index.html">MNE-Python</a> organization that stands on the umbrella of <a href="https://www.python.org/psf/">Python Software Foundation (PSF)</a>.</p>
+<p>The MNE-python project has a rich amount of tools needed to work with EEG and MEG data. On the other hand, many BCI researchers need to work with the data at the time they are acquired and return feedback to the user. No module in MNE-Python allows that kind of online analysis yet. Thinking about this, I am proposing the idea of developing a module that allows an online analysis, initially to SSVEP-BCI (one of the most used paradigms in BCI research) using OpenBCI board (one of the most used low cost EEG equipment) for data acquisition.</p>
+<p>Following some reasons to develop full support for online experimentation in MNE-Python:</p>
+<ul>
+<li>Developers who like python, like to continue with python. There is a set of tools <a href="https://depositonce.tu-berlin.de/bitstream/11303/4734/2/venthur_bastian.pdf">(Wyrm/Mushu/Pyff)</a> which was developed for this purpose, but this project don't seems active.</li>
+<li><a href="http://openvibe.inria.fr/">OpenVibe</a> and <a href="http://www.schalklab.org/research/bci2000">BCI 2000</a> are complete frameworks that can be used for this type of experimentation, but are written in C++, which makes it difficult for BCI researchers to create new experiments that are not offered by their interface. In addition, BCI 2000 has a non-opensource license;</li>
+<li><a href="https://www.neuropype.io/">NeuroPype (QUSP)</a> would be the perfect alternative for python developers, however it is not opensource as well;</li>
+</ul>
+<p>For these reasons, a real-time module would be essential for BCI researchers in MNE-python, which already has most of the quality cited: opensource, extensibility, flexibility, great amount of tools, very active community, etc.
+My idea is to develop an OpenBCI pipeline acquisition and adapt what MNE-Python already has to work with online BCI paradigms.</p>
+<p>Initially I am studying the development of an online analysis with the SSVEP-BCI paradigm, but at the conclusion of this step, I could think of as a secondary goal the P300 paradigm as well.</p>
+<p>As part of this project, I also want to develop a module that can receive markers for feedback using datagrams. In this way it will be possible to adapt existing feedback environments such as <a href="https://github.com/bbci/pyff">PyFF</a>, scenarios using Python and Lua (OpenVibe) and even handmade scenarios with the Löve library (already built by me).</p>
+<p>The next posts (if I am accepted) will be more focused on the GSoC project and my research in BCI.</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="./tag/mne-python.html">MNE-Python</a>
+      <a href="./tag/gsoc.html">GSoC</a>
+      <a href="./tag/psf.html">PSF</a>
+    </p>
+  </div>
+
+
+    <div class="addthis_relatedposts_inline">
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; Rodrigo Hübner 2017 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+</p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+         src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Hack the Brain ",
+  "url" : ".",
+  "image": "https://avatars3.githubusercontent.com/u/5169959?v=3&u=30a93dde01ad3df9e78d652e49fb65e2e91e95ab&s=400",
+  "description": ""
+}
+</script>
+
+</body>
+</html>
